@@ -1,51 +1,52 @@
 <script>
-	import SearchMovies from "./Components/SearchMovies.svelte";
-	import Books from "./Components/Books.svelte";
-	let option;
-	let selectedOption;
-	function handleClick(){
-		selectedOption = option
-	}
+	import Options from "./Components/Options.svelte";
 </script>
 
 <section>
-	<select bind:value={option} name="Chose" id="Chose">
-		<option value="movies">Movies</option>
-		<option value="books">Books</option>
-	</select>
-	<button on:click={handleClick}> Chose </button>    
+	<h1>Welcome to Shearch Movies and books!</h1>
+	<h2>
+		Made 100% to learn Svelte by <a
+			href="https://github.com/Deyverson1"
+			target="_blank"><span>@Deyverson1</span></a
+		>, following one of
+		<a href="https://github.com/midudev?tab=repositories" target="_blank"
+			><span>@Midudev's</span></a
+		> projects
+	</h2>
+	<Options />
 </section>
 
-<article class="search-container">
-	{#if selectedOption == 'movies'}
-		<SearchMovies/>
-	{:else if selectedOption == 'books'}
-		<Books/>
-	{/if}
-</article>
-
 <style>
-	section{
+	:root {
+		--primary-color: #ffffff;
+		--gray-medium: #4a5568;
+		--gray-light: #9ca3af;
+		--dark-turquoise: #00ced1;
+	}
+	section {
 		display: flex;
-		justify-content: center;
-		gap: 16px;
-		margin: 2rem;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 	}
-	select{
-		font-size: 15px;
-		color: black;
-		padding: 10px 30px;
+	h1 {
+		font-size: 48px;
+		font-weight: 800;
+		color: var(--primary-color);
 	}
-	button{
-		font-size: 15px;
-		color: black;
-		padding: 10px 20px;
-		cursor: pointer;
+	h2 {
+		font-size: 20px;
+		font-weight: 300;
+		color: var(--gray-light);
+		max-width: 800px;
 	}
-	article{
-		display: flex;
-		justify-content: center;
-		margin: 2rem;
+	span {
+		color: var(--dark-turquoise);
+	}
+	a {
+		text-decoration: none;
+	}
+	span:hover {
+		font-size: 21px;
 	}
 </style>
-

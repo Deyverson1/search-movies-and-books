@@ -42,22 +42,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: -8px;
     }
     div{
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 1rem;
     }
     input{
         padding: 1rem;
         margin: 0;
+        margin-bottom: 4rem;
         width: 300px;
     }
-    h5{
+    h5 {
         margin: 0;
         font-size: 18px;
+        color: white;
     }
 </style>
 
