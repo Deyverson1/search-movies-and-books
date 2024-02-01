@@ -1,43 +1,68 @@
 <script>
     export let movieTitle, poster, year, index;
 </script>
+
 <section>
     <article id={index}>
-        <h3>{movieTitle}</h3>
-        <span>{year}</span>
-        <img src={poster} alt={movieTitle}>
+        <picture>
+            <img src={poster} alt={movieTitle} />
+        </picture>
+        <div class="content">
+            <h3>{movieTitle}</h3>
+            <span>{year}</span>
+        </div>
     </article>
 </section>
 
 <style>
-    section{
+    section {
         display: flex;
-       padding: .5rem;
-       flex: 1;
-       box-sizing: border-box;
+        padding: 0.5rem;
+        justify-content: center;
+        flex: 1;
+        box-sizing: border-box;
     }
-    h3{
-        max-width: 200px;
-        text-align: center;
-        margin: 0;
-    }
-    span{
-        margin-bottom: 1rem;
-    }
-    article{
+    .content {
         display: flex;
         flex-direction: column;
-        padding: 1rem 3rem;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
-        height: 400px;
-        border: 1px solid #ccc;
-        background-color: #ccc;
-        margin: 2rem;
+        justify-content: center; 
+        align-items: center; 
+        padding: 1rem; 
     }
-    img{
-        width: 200px;
-        height: 342px;
+    h3 {
+        max-width: 300px;
+        text-align: center;
+        margin: 0;
+        color: white;
+    }
+    span {
+        margin-bottom: 1rem;
+        color: white;
+    }
+    article {
+        border-radius: 0.5rem;
+        border: 1px solid #4a5568; /* gray-700 */
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        background-color: #2d3748; /* gray-800 */
+        border-color: #4a5568; /* gray-700 */
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+    }
+    article:hover {
+        transform: scale(1.05);
+        background-color: #4a5568; 
+        border-color: #2d3748;
+    }
+    picture {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+    img {
+        width: 300px;
+        height: 350px;
     }
 </style>
