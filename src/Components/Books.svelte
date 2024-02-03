@@ -9,7 +9,6 @@
         )
             .then((res) => res.json())
             .then((apiResponse) => {
-                console.log(apiResponse.items);
                 contentResponse = apiResponse.items;
             });
     }
