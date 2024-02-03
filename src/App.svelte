@@ -3,7 +3,7 @@
 </script>
 
 <section>
-	<h1>Welcome to Search Movies and books!</h1>
+	<h1>Welcome to Shearch Movies and books!</h1>
 	<h2>
 		Made 100% to learn Svelte by <a
 			href="https://github.com/Deyverson1"

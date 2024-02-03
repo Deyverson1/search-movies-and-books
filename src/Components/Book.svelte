@@ -5,32 +5,23 @@
         infoLink,
         imageLinks = {},
         authors = {};
-
-    // Por temas de mixed content se cambia el protocolo de transferencia
-    let ReplaceHttp = imageLinks?.thumbnail?.replace("http://", "https://");
 </script>
 
 <section>
     <article>
         <section>
-            <h3>
-                {title !== null && title?.length > 40
-                    ? title?.slice(0, 40) + "..."
-                    : title}
-            </h3>
+            <h3>{title}</h3>
             <p>
-                {description == undefined
-                    ? "Descripción no disponible"
-                    : description !== null && description?.length > 750
-                      ? description.slice(0, 750) + "..."
-                      : description}
+                {description !== null && description?.length > 750
+                    ? description?.slice(0, 750) + "..."
+                    : description}
             </p>
         </section>
         <div>
             <h4>{authors[0]}</h4>
             <h5>{publishedDate}</h5>
             <picture>
-                <img src={ReplaceHttp} alt="Imagen no disponible" />
+                <img src={imageLinks.thumbnail} alt={title} />
             </picture>
             <a target="_blank" href={infoLink}>Visit</a>
         </div>
@@ -117,7 +108,6 @@
     img {
         width: 200px;
         height: 350px;
-        color: white;
     }
     a {
         display: none;

@@ -20,8 +20,8 @@
    <div>
         {#await response}
         <h5><strong>Loading...</strong></h5>
-        {:then content} 
-        {#each content as {Title: movieTitle, Year, Poster}, index} 
+        {:then carlos} 
+        {#each carlos as {Title: movieTitle, Year, Poster}, index} 
             <Movie
             movieTitle={movieTitle} 
             year={Year}
